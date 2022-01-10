@@ -12,7 +12,10 @@ class MyDocument extends Document {
       <Html lang='ja'>
         <Head>
           <meta charSet='UTF-8'></meta>
-          <meta name='description' content='やり抜く力を調べるアプリ' />
+          <meta
+            name='description'
+            content='やり抜く力を調べるアプリ 自分がどれくらいやり抜く力があるのか、簡単な質問に答えて調べてみよう！'
+          />
           <link
             href='https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'
             rel='stylesheet'
