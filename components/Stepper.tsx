@@ -11,15 +11,14 @@ export default function Stepper(props) {
         for (let i = 1; i <= questionsObj.questionNum; i++) {
           if (String(i) === props.questionNumber) {
             items.push(
-              <li
-                key={i}
-                className='flex overflow-hidden relative bg-indigo-500 rounded-full border'
-              >
-                <span
-                  className={`w-8 h-8 flex items-center justify-center transition-duration-40 bg-gray-300 border-gray-300 transition-transform ease-linear ${
-                    props.transitionState ? 'translate-x-full' : ''
-                  }`}
-                ></span>
+              <li key={i} className=''>
+                <div className='flex overflow-hidden relative bg-indigo-500 rounded-full border'>
+                  <span
+                    className={`w-8 h-8 flex items-center justify-center transition-duration-40 bg-gray-300 border-gray-300 transition-transform ease-linear ${
+                      props.transitionState ? 'translate-x-full' : ''
+                    }`}
+                  ></span>
+                </div>
               </li>,
             );
             continue;
