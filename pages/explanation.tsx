@@ -7,10 +7,10 @@ const Home = ({ blogs }) => {
 
   return (
     <div className='overflow-hidden relative min-h-screen bg-gray-100'>
-      <div className='container mx-auto text-center m-32'>
-        <div className='p-4 sm:p-8 text-gray-800 bg-white shadow-xl border border-gray-100 rounded-2xl font-medium max-w-screen-md mx-auto'>
-          <h2 className='text-lg font-bold mb-4'>注意事項</h2>
-          <p className='text-left md:mx-16 leading-relaxed'>
+      <div className='container m-32 mx-auto text-center'>
+        <div className='p-4 sm:p-8 mx-auto max-w-screen-md font-medium text-gray-800 bg-white rounded-2xl border border-gray-100 shadow-xl'>
+          <h2 className='mb-4 text-lg font-bold'>注意事項</h2>
+          <p className='md:mx-16 leading-relaxed text-left'>
             {`質問は全部で${questionsObj.questionNum}問です。`}
             <br />
             あまり深く考え込まず、同僚や友人や家族、 または、たいていの人と比べてどうか。
@@ -22,7 +22,7 @@ const Home = ({ blogs }) => {
             <div className='my-8'>
               <button
                 onClick={() => delQuestionObj()}
-                className='px-2 py-1 bg-red-400 text-lg text-white font-semibold rounded hover:bg-red-500'
+                className='py-1 px-2 text-lg font-semibold text-white bg-red-400 hover:bg-red-500 rounded'
               >
                 始める
               </button>

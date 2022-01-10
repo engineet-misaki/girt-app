@@ -1,9 +1,9 @@
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import React, { useState } from 'react';
 import type { AppProps } from 'next/app';
-import QuesitonsObject from '../components/QuestionsObject';
 import Head from 'next/head';
+import React, { useState } from 'react';
+import QuesitonsObject from '../components/QuestionsObject';
 
 export const QuestionsState = React.createContext<any>({});
 

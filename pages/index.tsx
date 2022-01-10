@@ -3,8 +3,8 @@ import Link from 'next/link';
 const Home = ({ blogs }) => {
   return (
     <div className='overflow-hidden relative min-h-screen bg-gray-100'>
-      <div className='container mx-auto sm:my-32 text-center max-w-screen-lg'>
-        <h1 className='mb-16 font-bold py-8 bg-red-800 leading-none tracking-widest text-white text-8xl'>
+      <div className='container sm:my-32 mx-auto max-w-screen-lg text-center'>
+        <h1 className='py-8 mb-16 text-8xl font-bold tracking-widest leading-none text-white bg-red-800'>
           GRIT
         </h1>
         <p className='text-lg'>
@@ -26,7 +26,7 @@ const Home = ({ blogs }) => {
         </p>
         <Link href='/explanation'>
           <div className='my-8'>
-            <button className='shadow-xl border-b-4 hover:border-b border-red-700 hover:border-red-900 px-5 py-2 text-2xl bg-red-600 text-white font-semibold rounded  hover:bg-red-800 hover:translate-y-1 transform transition-all '>
+            <button className='py-2 px-5 text-2xl font-semibold text-white bg-red-600 hover:bg-red-800 rounded border-b-4 hover:border-b border-red-700 hover:border-red-900 shadow-xl transition-all transform hover:translate-y-1'>
               自分のやり抜く力を調べる
             </button>
           </div>

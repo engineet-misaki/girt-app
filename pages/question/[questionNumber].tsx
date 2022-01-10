@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { useState, useContext, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/router';
-import { QuestionsState } from '../_app';
+import { useState, useContext, useEffect, useMemo } from 'react';
 import Stepper from '../../components/Stepper';
+import { QuestionsState } from '../_app';
 
 const Question = ({ blogs }) => {
   const router = useRouter();
@@ -77,22 +77,22 @@ const Question = ({ blogs }) => {
 
   return (
     <div className='overflow-hidden relative min-h-screen bg-gray-100'>
-      <div className='mt-16 max-w-screen-md mx-auto'>
-        <ul className='flex items-center justify-center space-x-1 font-light'>
+      <div className='mx-auto mt-16 max-w-screen-md'>
+        <ul className='flex justify-center items-center space-x-1 font-light'>
           <Stepper transitionState={transitionState} questionNumber={questionNumber} />
         </ul>
       </div>
-      <div className='container mx-auto m-16'>
-        <div className='p-4 sm:p-8 text-gray-800 bg-white shadow-xl border border-gray-100 rounded-2xl font-medium max-w-screen-sm mx-auto '>
+      <div className='container m-16 mx-auto'>
+        <div className='p-4 sm:p-8 mx-auto max-w-screen-sm font-medium text-gray-800 bg-white rounded-2xl border border-gray-100 shadow-xl'>
           <div className='flex justify-center items-center h-56'>
-            <p className='text-xl font-bold font-sans whitespace-pre-wrap text-center'>
+            <p className='font-sans text-xl font-bold text-center whitespace-pre-wrap'>
               {question && question.content}
             </p>
           </div>
           <div className='flex justify-between mx-auto sm:mx-10'>
             <button
               onClick={() => onAnswer(question.id, 1)}
-              className='px-2 py-1 bg-gray-400 text-xs rounded-full text-white font-semibold h-16 w-16 shadow-lg p-2 hover:bg-red-300'
+              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
             >
               まったく
               <br />
@@ -102,7 +102,7 @@ const Question = ({ blogs }) => {
             </button>
             <button
               onClick={() => onAnswer(question.id, 2)}
-              className='px-2 py-1 bg-gray-400 text-xs rounded-full text-white font-semibold h-16 w-16 shadow-lg p-2 hover:bg-red-300'
+              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
             >
               あまり
               <br />
@@ -112,7 +112,7 @@ const Question = ({ blogs }) => {
             </button>
             <button
               onClick={() => onAnswer(question.id, 3)}
-              className='px-2 py-1 bg-gray-400 text-xs rounded-full text-white font-semibold h-16 w-16 shadow-lg p-2 hover:bg-red-300'
+              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
             >
               いくらか
               <br />
@@ -122,7 +122,7 @@ const Question = ({ blogs }) => {
             </button>
             <button
               onClick={() => onAnswer(question.id, 4)}
-              className='px-2 py-1 bg-gray-400 text-xs rounded-full text-white font-semibold h-16 w-16 shadow-lg p-2 hover:bg-red-300'
+              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
             >
               かなり
               <br />
@@ -132,7 +132,7 @@ const Question = ({ blogs }) => {
             </button>
             <button
               onClick={() => onAnswer(question.id, 5)}
-              className='px-2 py-1 bg-gray-400 text-xs rounded-full text-white font-semibold h-16 w-16 shadow-lg p-2 hover:bg-red-300'
+              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
             >
               非常に
               <br />

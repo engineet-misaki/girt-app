@@ -18,8 +18,8 @@
       "error",
       {
         "alphabetize": {
-          "order": "asc",
-          "no-custom-classname": "off"
+          "order": "asc"
+          // "no-custom-classname": "off"
         }
       }
     ]
