@@ -9,6 +9,7 @@ const Question = ({ blogs }) => {
   const { questionNumber } = router.query;
   const { questionsObj, setQuestionsObj, delQuestionObj } = useContext(QuestionsState);
   const [timeId, setTimeId] = useState(0);
+  const [ansBtnClass, setAnsBtnClass] = useState('');
   const [transitionState, settransitionState] = useState(false);
   const [question, setQuestion] = useState({ id: null, content: null });
 
@@ -18,15 +19,27 @@ const Question = ({ blogs }) => {
       settransitionState(true);
     }, 100);
 
+    // 問題文作成
     const quesitonValue = makeQuestion();
     setQuestion(quesitonValue);
+
     // 4０秒後に自動遷移する
     let id = window.setTimeout(() => {
-      // nextPage(quesitonValue.id);
-    }, 5 * 1000);
+      nextPage(quesitonValue.id);
+    }, 40 * 1000);
     setTimeId(id);
   }, [questionNumber]);
 
+  // class作成
+  // window.innerWidth > 640
+
+  useEffect(() => {
+    const tmpClass =
+      window.innerWidth > 640
+        ? 'p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
+        : 'p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 rounded-full shadow-lg';
+    setAnsBtnClass(tmpClass);
+  }, []);
   // 遷移した後にランダムで被りなく問題を表示する
   const makeQuestion = () => {
     const notDoneQuestion = [];
@@ -90,50 +103,35 @@ const Question = ({ blogs }) => {
             </p>
           </div>
           <div className='flex justify-between mx-auto sm:mx-10'>
-            <button
-              onClick={() => onAnswer(question.id, 1)}
-              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
-            >
+            <button onClick={() => onAnswer(question.id, 1)} className={`${ansBtnClass}`}>
               まったく
               <br />
               当てはま
               <br />
               らない
             </button>
-            <button
-              onClick={() => onAnswer(question.id, 2)}
-              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
-            >
+            <button onClick={() => onAnswer(question.id, 2)} className={`${ansBtnClass}`}>
               あまり
               <br />
               当てはま
               <br />
               らない
             </button>
-            <button
-              onClick={() => onAnswer(question.id, 3)}
-              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
-            >
+            <button onClick={() => onAnswer(question.id, 3)} className={`${ansBtnClass}`}>
               いくらか
               <br />
               当て
               <br />
               はまる
             </button>
-            <button
-              onClick={() => onAnswer(question.id, 4)}
-              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
-            >
+            <button onClick={() => onAnswer(question.id, 4)} className={`${ansBtnClass}`}>
               かなり
               <br />
               当て
               <br />
               はまる
             </button>
-            <button
-              onClick={() => onAnswer(question.id, 5)}
-              className='p-2 py-1 px-2 w-16 h-16 text-xs font-semibold text-white bg-gray-400 hover:bg-red-300 rounded-full shadow-lg'
-            >
+            <button onClick={() => onAnswer(question.id, 5)} className={`${ansBtnClass}`}>
               非常に
               <br />
               当て

@@ -19,7 +19,7 @@ const Home = ({ blogs }) => {
           自分がどれくらいやり抜く力があるのか、簡単な質問に答えて調べてみよう！
           <br />
           <br />
-          <span className='text-xs'>
+          <span className='inline-block text-xs'>
             ※
             この内容は、米国陸軍士官学校の生徒が、「やり抜く力をどれくらい持っているのか」を研究するために作られたテスト問題を参考にして作成しています。
           </span>
